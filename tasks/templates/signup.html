@@ -1,0 +1,22 @@
+#con las llaves y el porcentaje llamo lo que defino en base.html
+
+{% extends 'base.html' %}
+
+{% block content %}
+
+<h1>Login...</h1>
+
+    {{error}}
+
+<form action="/signup/" method="POST">
+    #token para manejo de sesiones
+    {% csrf_token %}
+    {{form.as_p}}
+
+    <button>
+        Signup
+    </button>
+</form>
+
+{% endblock %}
+

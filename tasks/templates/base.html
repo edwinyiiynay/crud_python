@@ -1,0 +1,45 @@
+# este lo uso para el nav de todo el sitiop
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Crud</title>
+</head>
+
+<body>
+
+    <nav>
+        <ul>
+            <li>
+                <a href="/">Home</a>
+            </li>
+        </ul>
+        <ul>
+            <li>
+                <a href="/tasks/">Tarea</a>
+            </li>
+        </ul>
+        <ul>
+            <li>
+                <a href="/signup">Login</a>
+            </li>
+        </ul>
+        <ul>
+        # aqui manejo la sesion esto aparece si el usuario esta logeado
+        {% if user.is_authenticated %}
+        <li>
+            <a href="/logout">Cerrar sesions</a>
+        </li>
+        {% end if%}
+
+        </ul>
+    </nav>
+
+    {% block content %}
+    {% endblock %}
+
+</body>
+
+</html>
